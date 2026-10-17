@@ -9,7 +9,9 @@ GSyncでGoogle DriveとiPhoneのObsidianを同期する個人用環境につい�
 | アプリケーションのホームページ | https://jun-skn.github.io/ |
 | アプリケーションのプライバシーポリシー | https://jun-skn.github.io/privacy.html |
 
-上記は公開後のURLです。PR段階ではサイトを公開しません。OAuthの表示名はページとの対応が分かる名前（例：個人用Obsidian同期）に揃えてください。
+上記はページ公開後のURLです。作成したHTMLとCSSはPR段階では作業ブランチにのみ置きます。OAuthの表示名はページとの対応が分かる名前（例：個人用Obsidian同期）に揃えてください。
+
+リポジトリ作成時に、GitHub側でPagesが `main / (root)` を公開元として自動で有効になりました。初期のmainにはREADMEのみがあります。停止APIはGitHubから拒否されたため、この設定を維持しています。PRをmainへマージすると、作成したページが公開対象になります。
 
 この2ページは認証のコールバックではありません。OAuthクライアントの承認済みリダイレクトURIは、実際のGSync設定と一致させます。本変更ではコールバックページを追加せず、GSyncの設定も変更しません。
 
@@ -18,7 +20,7 @@ GSyncでGoogle DriveとiPhoneのObsidianを同期する個人用環境につい�
 1. PRの `index.html` と `privacy.html` を読み、利用しているプラグインが [dg0988/ObsidianGSync](https://github.com/dg0988/ObsidianGSync) であることと、記載が実際の運用に合っていることを確認します。インストール済みバージョンや端末設定は本作業では確認していません。
 2. 作業ブランチのファイルを取得し、`index.html` をブラウザで開きます。CSSとページ間リンクはローカルでも動作します。HTTPで確認する場合は、このディレクトリで `python3 -m http.server 8000 --bind 127.0.0.1` を実行し、同じ端末で `http://127.0.0.1:8000/` を開きます。
 3. 内容を承認してPRを `main` にマージします。
-4. [Settings → Pages](https://github.com/jun-skn/jun-skn.github.io/settings/pages) の **Build and deployment** で **Deploy from a branch**、ブランチ **main**、フォルダ **/ (root)** を選んで保存します。
+4. [Settings → Pages](https://github.com/jun-skn/jun-skn.github.io/settings/pages) の **Build and deployment** が **Deploy from a branch**、ブランチ **main**、フォルダ **/ (root)** になっていることを確認します。設定が変わっていた場合は、この内容を選んで保存します。
 5. Pagesのデプロイ完了後、上記2つのURLがログイン不要で閲覧できることを確認し、Google Auth Platformに登録します。
 
 ## OAuthについて確認したこと
