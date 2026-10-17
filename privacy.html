@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="個人用Obsidian同期環境におけるGoogle Driveデータと認証情報の取り扱いについて。">
+  <title>プライバシーポリシー | 個人用Obsidian同期</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="index.html">jun-skn</a>
+    <nav aria-label="メインナビゲーション">
+      <a href="index.html">ホーム</a>
+      <a href="privacy.html" aria-current="page">プライバシーポリシー</a>
+    </nav>
+  </header>
+  <main>
+    <p class="eyebrow">個人用Obsidian同期</p>
+    <h1>プライバシーポリシー</h1>
+    <p class="updated">制定日：2026年10月17日</p>
+    <p>本ポリシーは、運営者本人がGSyncを利用してGoogle DriveとiPhoneのObsidianを同期する個人用環境と、この案内サイトに適用します。</p>
+    <section aria-labelledby="data">
+      <h2 id="data">アクセスするデータと利用目的</h2>
+      <p>GSyncは同期のために、設定したGoogle Driveフォルダ内のファイルとフォルダの名前、識別子、更新日時などのメタデータ、およびノートや添付ファイルの内容を取得・利用します。端末上の保管庫と比較し、一覧取得、ダウンロード、作成、アップロード、更新を行います。削除の同期が有効な場合は、削除対象をGoogle DriveまたはObsidianのゴミ箱へ移動します。</p>
+      <p>GSyncが要求するOAuthスコープは <code>https://www.googleapis.com/auth/drive</code> です。これはGoogle Drive全体へのアクセスを許可する権限であり、選択したフォルダだけに権限を制限するものではありません。GSyncの同期処理は設定したフォルダを対象とします。</p>
+      <p>取得したデータは本人のノートと添付ファイルの同期に利用し、広告、販売、プロファイリング、AIモデルの学習には利用しません。</p>
+    </section>
+    <section aria-labelledby="storage">
+      <h2 id="storage">保存場所と通信先</h2>
+      <p>同期対象のファイルは、本人のGoogle Driveと同期に使用する端末の保管庫に保存されます。ファイルの転送はGSyncを実行する端末とGoogleのAPIとの間で行われ、運営者が別途設置する中継サーバーにノートを保存する仕組みはありません。</p>
+      <p>OAuthクライアントID、クライアントシークレット、リフレッシュトークンは、各端末のGSync設定ファイル（<code>.obsidian/plugins/gsync/data.json</code>）に保存されます。アクセストークンはGoogle Drive APIへのリクエストに使われ、クライアント情報とリフレッシュトークンはGoogleのトークン取得・更新処理に使われます。これらの実際の値やノートの内容を、このサイトや公開リポジトリへ掲載しません。</p>
+      <p>認証時にGSyncの既定のリダイレクトページを利用する場合、開発者がGitHub Pagesで公開している <code>dg0988.github.io/ObsidianGSync/callback.html</code> を経由します。この静的ページはGoogleからの一時的な認可コードとstate（保管庫名を含む）を受け取り、端末のObsidianへ引き渡します。トークンの取得・更新は端末とGoogleの間で行われます。この案内サイトは認証のリダイレクト先として使用しません。</p>
+    </section>
+    <section aria-labelledby="sharing">
+      <h2 id="sharing">第三者への提供</h2>
+      <p>同期と認証に必要なGoogleとの通信、および上記の認証中継ページの利用を除き、本環境の運営者がGoogleユーザーデータを第三者に提供・販売することはありません。Googleでのデータの扱いには、<a href="https://policies.google.com/privacy?hl=ja">Googleのプライバシーポリシー</a>が適用されます。</p>
+    </section>
+    <section aria-labelledby="deletion">
+      <h2 id="deletion">利用停止・権限の取り消し・データの削除</h2>
+      <p>GSyncを無効化すると、その端末での同期を停止できます。Googleへのアクセス権は、<a href="https://myaccount.google.com/connections">Googleアカウントの接続管理</a>から本OAuthアプリの接続を削除して取り消せます。</p>
+      <p>権限の取り消しだけでは、Google Driveや端末に保存済みのファイルは削除されません。不要なファイルは、それぞれの保存先とゴミ箱で削除してください。端末に保存された認証設定は別途削除する必要があります。同期が有効な間は削除が他の保存先へ反映される場合があるため、保存済みデータの整理は同期を停止してから行ってください。</p>
+    </section>
+    <section aria-labelledby="website">
+      <h2 id="website">この案内サイトの閲覧情報</h2>
+      <p>このサイトには、入力フォーム、独自のCookie、アクセス解析、広告、外部埋め込みを設置していません。サイト自体がGoogle Driveデータや認証情報を取得することはありません。</p>
+      <p>ホスティングにはGitHub Pagesを利用します。GitHubはサービス提供やセキュリティのため、IPアドレスなどの技術的なアクセス情報を取り扱います。詳細は<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHubのプライバシーに関する声明</a>をご確認ください。GSyncの既定の認証中継ページもGitHub Pagesで配信されます。</p>
+    </section>
+    <section aria-labelledby="changes">
+      <h2 id="changes">ポリシーの更新</h2>
+      <p>利用方法やデータの取り扱いを変更する場合は、このページを更新します。GSync自体の仕様は<a href="https://github.com/dg0988/ObsidianGSync">公式リポジトリ</a>をご確認ください。</p>
+    </section>
+    <p><a href="index.html">← ホームへ戻る</a></p>
+  </main>
+  <footer>個人用Obsidian同期 · jun-skn</footer>
+</body>
+</html>

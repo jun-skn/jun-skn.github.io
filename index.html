@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GSyncを使った個人用のObsidianとGoogle Driveの同期環境について説明します。">
+  <title>個人用Obsidian同期 | jun-skn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="index.html">jun-skn</a>
+    <nav aria-label="メインナビゲーション">
+      <a href="index.html" aria-current="page">ホーム</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </nav>
+  </header>
+  <main>
+    <p class="eyebrow">個人の同期環境</p>
+    <h1>個人用Obsidian同期</h1>
+    <p class="lead">自分のノートを、Google DriveとiPhoneのObsidianで同期するための環境です。</p>
+    <section aria-labelledby="about">
+      <h2 id="about">この環境について</h2>
+      <p>Obsidianのコミュニティプラグイン「GSync」を利用して、自分のGoogle Drive上のフォルダと、iPhone内のObsidianの保管庫（Vault）を双方向に同期します。ノートや添付ファイルを端末間で利用することが目的です。</p>
+      <p>Google OAuthアプリは運営者本人のアカウントで利用します。一般向けの同期サービスや、第三者のアカウントを受け付けるサービスとして提供しているものではありません。</p>
+    </section>
+    <section aria-labelledby="google">
+      <h2 id="google">Googleとの接続</h2>
+      <p>Google OAuthで認証し、GSyncが端末からGoogle Drive APIに直接アクセスします。同期対象はGSyncで設定したフォルダですが、プラグインが要求するOAuth権限はGoogle Drive全体へのアクセスです。</p>
+      <p>このサイトは、OAuthアプリの利用目的とデータの扱いを説明するための静的な案内ページです。サイト自体にログインや同期の機能はありません。</p>
+      <p><a class="policy-link" href="privacy.html">プライバシーポリシーを読む <span aria-hidden="true">→</span></a></p>
+    </section>
+    <section aria-labelledby="reference">
+      <h2 id="reference">利用しているプラグイン</h2>
+      <p><a href="https://github.com/dg0988/ObsidianGSync">GSyncの公式リポジトリ</a>で、機能と仕組みを確認できます。このサイトは個人の利用環境の説明であり、GSync、Obsidian、Googleの公式サイトではありません。</p>
+    </section>
+  </main>
+  <footer>個人用Obsidian同期 · jun-skn</footer>
+</body>
+</html>
